@@ -1,0 +1,236 @@
+/* Sidebar.css */
+
+:root {
+  --black: #212626;
+  --grey: #a4a4a4;
+  --white: #ffffff;
+}
+
+.sidebar-container {
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  margin-top: 40px;
+}
+
+.sidebar-button {
+  background-color: var(--black);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin: 0.5rem 0 0 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sidebar-button::before,
+.sidebar-button::after {
+  content: "";
+  background-color: var(--white);
+  height: 2px;
+  width: 1rem;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.sidebar-button::before {
+  top: 1rem;
+  transform: rotate(0);
+}
+
+.sidebar-button::after {
+  top: 1.5rem;
+  transform: rotate(0);
+}
+
+.sidebar-button.clicked::before {
+  top: 1.5rem;
+  transform: rotate(135deg);
+}
+
+.sidebar-button.clicked::after {
+  top: 1.2rem;
+  transform: rotate(-135deg);
+}
+.sidebar-content {
+  background-color: var(--black);
+  width: 3.5rem;
+  height: 80vh;
+  margin-top: 1rem;
+  border-radius: 0 30px 30px 0;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  width: 2rem;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.slick-bar {
+  color: var(--white);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--black);
+  padding: 2rem 0;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  width: 3.5rem;
+  transition: all 0.5s ease;
+  border-radius: 0 30px 30px 0;
+  /* z-index: 50; */
+}
+
+.slick-bar.clicked {
+  width: 12rem;
+}
+
+.slick-bar a {
+  text-decoration: none;
+  color: var(--white);
+  width: 100%;
+  padding: 1rem 0;
+  cursor: pointer;
+  display: flex;
+  padding-left: 1rem;
+}
+
+.slick-bar a:hover {
+  border-right: 4px solid var(--white);
+}
+
+.slick-bar a:hover img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.slick-bar a img {
+  width: 1.2rem;
+  height: auto;
+  filter: invert(92%) sepia(4%) saturate(1033%) hue-rotate(169deg) brightness(78%) contrast(85%);
+}
+
+.text {
+  width: 0;
+  overflow: hidden;
+  margin-left: 0;
+  transition: all 0.3s ease;
+}
+
+.text.clicked {
+  width: 100%;
+  margin-left: 1.5rem;
+}
+
+.profile {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  background-color: var(--black);
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.profile.clicked {
+  width: 14rem;
+  margin-left: 9rem;
+}
+
+.profile img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile img:hover {
+  border: 2px solid var(--grey);
+  padding: 2px;
+}
+
+.details {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details.clicked {
+  display: flex;
+}
+
+.name {
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name h4 {
+  display: inline-block;
+}
+
+.name a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--grey);
+}
+
+.name a:hover {
+  text-decoration: underline;
+}
+
+.logout {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+}
+
+.logout img {
+  width: 100%;
+  height: auto;
+  filter: invert(15%) sepia(70%) saturate(6573%) hue-rotate(2deg) brightness(100%) contrast(126%);
+  transition: all 0.3s ease;
+}
+
+.logout img:hover {
+  border: none;
+  padding: 0;
+  opacity: 0.5;
+}
+
+.main-content {
+  margin-left: 3.5rem;
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.active {
+  border-right: 4px solid var(--white);
+}
+
+.active img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
